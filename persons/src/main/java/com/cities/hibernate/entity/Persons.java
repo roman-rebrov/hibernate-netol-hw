@@ -9,34 +9,33 @@ import jakarta.persistence.*;
 public class Persons {
 
 
-    @Id
-    @Column
+    @Column(name = "name")
     private String name;
-    @Id
-    @Column
+    @Id()
+    @Column(name = "surname")
     private String surname;
-    @Id
-    @Column
+    @Column(name = "age")
     private Integer age;
-    @Column
-    private String phone_number;
-    @Column
-    private String city_of_living;
+    @Column(name = "phone_number")
+    private String phone;
+    @Column(name = "city_of_living")
+    private String city;
 
-    public String getPhone_number() {
-        return phone_number;
+
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getCity_of_living() {
-        return city_of_living;
+    public String getCity() {
+        return city;
     }
 
-    public void setCity_of_living(String city_of_living) {
-        this.city_of_living = city_of_living;
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getName() {
