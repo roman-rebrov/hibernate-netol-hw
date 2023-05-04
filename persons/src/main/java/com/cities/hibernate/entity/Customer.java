@@ -5,38 +5,28 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name = "persons")
-public class Persons {
-
+@Table(name = "CUSTOMERS")
+public class Customer {
 
     @Id
+    @Column(name = "id")
+    private Integer id;
     @Column
     private String name;
-    @Id
     @Column
     private String surname;
-    @Id
     @Column
     private Integer age;
-    @Column
-    private String phone_number;
-    @Column
-    private String city_of_living;
+    @Column(name = "phone_number")
+    private String phoneNumber;
 
-    public String getPhone_number() {
-        return phone_number;
+
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
-    }
-
-    public String getCity_of_living() {
-        return city_of_living;
-    }
-
-    public void setCity_of_living(String city_of_living) {
-        this.city_of_living = city_of_living;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getName() {

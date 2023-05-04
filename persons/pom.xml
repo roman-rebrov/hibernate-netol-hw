@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cities</groupId>
-	<artifactId>hibernate</artifactId>
+	<artifactId>persons</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>requests</name>
 	<description>Demo project for Spring Boot</description>
