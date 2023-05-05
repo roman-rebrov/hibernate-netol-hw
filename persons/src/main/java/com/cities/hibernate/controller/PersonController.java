@@ -1,7 +1,7 @@
 package com.cities.hibernate.controller;
 
 
-import com.cities.hibernate.entity.Persons;
+import com.cities.hibernate.entity.Person;
 import com.cities.hibernate.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,14 +21,14 @@ public class PersonController {
     private PersonService service;
 
     @GetMapping("/by-city")
-    public ResponseEntity<List<Persons>> getPersonsByCity(@RequestParam("city") String city){
-        final List<Persons> response = service.getPersonsByCity(city);
+    public ResponseEntity<List<Person>> getPersonsByCity(@RequestParam("city") String city){
+        final List<Person> response = service.getPersonsByCity(city);
         return ResponseEntity.ok(response);
     }
 
     @GetMapping("/by-name")
-    public ResponseEntity<Persons> getPersonsByCity(@RequestParam("name") String name, @RequestParam("surname") String surname){
-        final Optional<Persons> response = service.getPersonsByNameAndSurname(name, surname);
+    public ResponseEntity<Person> getPersonsByCity(@RequestParam("name") String name, @RequestParam("surname") String surname){
+        final Optional<Person> response = service.getPersonsByNameAndSurname(name, surname);
 
         if (response.isEmpty()) {
             return ResponseEntity.badRequest().build();
@@ -37,8 +37,8 @@ public class PersonController {
     }
 
     @GetMapping("/by-age")
-    public ResponseEntity<List<Persons>> getPersonsByAge(@RequestParam("age") int age){
-        final List<Persons> response = service.getPersonsByAge(age);
+    public ResponseEntity<List<Person>> getPersonsByAge(@RequestParam("age") int age){
+        final List<Person> response = service.getPersonsByAge(age);
 
         return ResponseEntity.ok(response);
     }

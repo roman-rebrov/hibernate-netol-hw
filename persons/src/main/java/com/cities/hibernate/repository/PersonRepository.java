@@ -1,7 +1,7 @@
 package com.cities.hibernate.repository;
 
 
-import com.cities.hibernate.entity.Persons;
+import com.cities.hibernate.entity.Person;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -20,25 +20,25 @@ public class PersonRepository {
     private Logger log = Logger.getLogger(PersonRepository.class.getName());
 
     @Transactional
-    public List<Persons> getPersonsByCity(String city){
+    public List<Person> getPersonsByCity(String city){
 
-        List<Persons> resultList = jpaRepository.findByCity(city);
-
-        return resultList;
-    }
-
-    @Transactional
-    public Optional<Persons> getPersonsByNameAndSurname(String name, String surname) {
-
-        Optional<Persons> resultList = jpaRepository.findByNameAndSurname(name, surname);
+        List<Person> resultList = jpaRepository.findByCity(city);
 
         return resultList;
     }
 
     @Transactional
-    public List<Persons> getPersonsByAge(int age) {
+    public Optional<Person> getPersonsByNameAndSurname(String name, String surname) {
 
-        List<Persons> resultList = jpaRepository.findByAgeLessThan(age, Sort.by("age"));
+        Optional<Person> resultList = jpaRepository.findByNameAndSurname(name, surname);
+
+        return resultList;
+    }
+
+    @Transactional
+    public List<Person> getPersonsByAge(int age) {
+
+        List<Person> resultList = jpaRepository.findByAgeLessThan(age, Sort.by("age"));
 
         return resultList;
     }

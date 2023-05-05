@@ -5,15 +5,17 @@ import jakarta.persistence.*;
 
 
 @Entity
+@IdClass(PersonId.class)
 @Table(name = "persons")
-public class Persons {
+public class Person {
 
-
+    @Id
     @Column(name = "name")
     private String name;
     @Id()
     @Column(name = "surname")
     private String surname;
+    @Id
     @Column(name = "age")
     private Integer age;
     @Column(name = "phone_number")
