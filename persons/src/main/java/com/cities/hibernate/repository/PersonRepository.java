@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.logging.Logger;
 
 @Repository
 public class PersonRepository {
@@ -17,10 +16,9 @@ public class PersonRepository {
 
     @Autowired
     private PersonJpaRepository jpaRepository;
-    private Logger log = Logger.getLogger(PersonRepository.class.getName());
 
     @Transactional
-    public List<Person> getPersonsByCity(String city){
+    public List<Person> getPersonsByCity(String city) {
 
         List<Person> resultList = jpaRepository.findByCity(city);
 
