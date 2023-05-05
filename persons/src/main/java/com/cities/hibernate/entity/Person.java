@@ -5,8 +5,9 @@ import jakarta.persistence.*;
 
 
 @Entity
+@IdClass(PersonId.class)
 @Table(name = "persons")
-public class Persons {
+public class Person {
 
 
     @Id
@@ -18,25 +19,25 @@ public class Persons {
     @Id
     @Column
     private Integer age;
-    @Column
-    private String phone_number;
-    @Column
-    private String city_of_living;
+    @Column(name = "phone_number")
+    private String phoneNumber;
+    @Column(name = "city_of_living")
+    private String cityOfLiving;
 
-    public String getPhone_number() {
-        return phone_number;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public String getCity_of_living() {
-        return city_of_living;
+    public String getCityOfLiving() {
+        return cityOfLiving;
     }
 
-    public void setCity_of_living(String city_of_living) {
-        this.city_of_living = city_of_living;
+    public void setCityOfLiving(String cityOfLiving) {
+        this.cityOfLiving = cityOfLiving;
     }
 
     public String getName() {

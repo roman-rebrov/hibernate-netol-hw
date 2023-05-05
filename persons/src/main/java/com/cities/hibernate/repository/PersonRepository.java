@@ -1,7 +1,7 @@
 package com.cities.hibernate.repository;
 
 
-import com.cities.hibernate.entity.Persons;
+import com.cities.hibernate.entity.Person;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
@@ -19,11 +19,11 @@ public class PersonRepository {
     private EntityManager manager;
 
     @Transactional
-    public List<Persons> getPersonsByCity(String city){
+    public List<Person> getPersonsByCity(String city){
 
-        Query query = manager.createQuery( "SELECT  p FROM Persons p WHERE p.city_of_living = :city");
+        Query query = manager.createQuery( "SELECT  p FROM Person p WHERE p.cityOfLiving = :city");
         query.setParameter("city", city);
-        List<Persons> resultList = query.getResultList();
+        List<Person> resultList = query.getResultList();
 
         return resultList;
     }

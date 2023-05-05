@@ -1,7 +1,7 @@
 package com.cities.hibernate.controller;
 
 
-import com.cities.hibernate.entity.Persons;
+import com.cities.hibernate.entity.Person;
 import com.cities.hibernate.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +20,8 @@ public class PersonController {
     private PersonService service;
 
     @GetMapping("/by-city")
-    public ResponseEntity<List<Persons>> getPersonsByCity(@RequestParam("city") String city){
-        final List<Persons> response = service.getPersonsByCity(city);
+    public ResponseEntity<List<Person>> getPersonsByCity(@RequestParam("city") String city){
+        final List<Person> response = service.getPersonsByCity(city);
         return ResponseEntity.ok(response);
     }
 }
